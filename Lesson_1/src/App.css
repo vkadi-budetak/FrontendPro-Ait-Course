@@ -1,0 +1,31 @@
+.app {
+  display: flex;
+  flex: 1;
+  padding: 15px;
+  /* от этих стилей можна в будущем удалить */
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.counter-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.like-wrapper {
+  display: flex;
+    gap: 35px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.like-count {
+  font-weight: bold;
+  font-size: 18px;
+}

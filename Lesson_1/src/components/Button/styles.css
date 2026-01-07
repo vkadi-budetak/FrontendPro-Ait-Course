@@ -1,0 +1,11 @@
+.button {
+  width: 300px;
+  /* width: 100%; */ /* - а де використовують вже кнопці задають розміри */
+  padding: 20px;
+  background-color: #1F27F5;
+  font-size: 20px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
