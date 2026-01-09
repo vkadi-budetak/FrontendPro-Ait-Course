@@ -6,6 +6,13 @@ import Tool from "./components/Tool/Tool";
 import ProfileCard from "./components/ProfileCard/ProfileCard";
 
 function App() {
+  const johnDawson = {
+    avatar:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7x7RFFT8-4WY26mVJxhk5lvmoTIhb_0NzAQ&s",
+    name: "John Dawson",
+    description: "Full Stack Dev",
+  };
+
   return (
     <>
       <p>Hallo World!</p>
@@ -14,12 +21,7 @@ function App() {
       <Greetings name="20" />
 
       <Tool paragraph="Important step for our journey" />
-      <ProfileCard
-        avatar="123"
-        name="VLad"
-        description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem molestiae quibusdam non sit placeat? Tempore corrupti ullam, quo ea vel ipsum non fugiat. Natus corrupti nostrum reprehenderit reiciendis fuga quaerat!"
-      />
-
+      <ProfileCard {...johnDawson} />
       <Goodbye familyName="Блааа Блааааблаблович" score={90} />
       <Goodbye familyName="Блааа Блааааблаблович" />
       <Counter />
