@@ -5,6 +5,7 @@ import Greetings from "./components/Greetings/Greetings";
 import Tool from "./components/Tool/Tool";
 import ProfileCard from "./components/ProfileCard/ProfileCard";
 import IdealWeihtCalculator from "./components/IdealWeihtCalculator/IdealWeihtCalculator";
+import SpaceMissionForm from "./components/SpaceMissionForm/SpaceMissionForm";
 
 function App() {
   const johnDawson = {
@@ -32,6 +33,8 @@ function App() {
       <IdealWeihtCalculator />
 
       <ProfileCard {...johnDawson} />
+
+      <SpaceMissionForm />
     </>
   );
 }
