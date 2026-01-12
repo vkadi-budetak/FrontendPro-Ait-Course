@@ -1,20 +1,22 @@
 import { useState } from "react";
+import styles from "./SpaceMissionForm.module.css";
+import { planetOptions } from "./selectOption";
 
 export default function SpaceMissionForm() {
   const [name, setName] = useState("");
   const [namePlanet, setNamePlanet] = useState("noPlanet");
-  const [message, setMessage] = useState("");
+  // const [message, setMessage] = useState("");
 
-  function displayNameEndPlanet() {
-    if (name.trim() !== "" && namePlanet !== "noPlanet") {
-      setMessage(`🧑‍🚀 Astronaut ${name} is headed to ${namePlanet}!`);
-    } else {
-      setMessage("Please enter your name and choose a planet to begin.");
-    }
-  }
+  // function displayNameEndPlanet() {
+  //   if (name.trim() !== "" && namePlanet !== "noPlanet") {
+  //     setMessage(`🧑‍🚀 Astronaut ${name} is headed to ${namePlanet}!`);
+  //   } else {
+  //     setMessage("Please enter your name and choose a planet to begin.");
+  //   }
+  // }
 
   return (
-    <div>
+    <div className={styles.container}>
       <div>
         <label htmlFor="name">Name: </label>
         <input
@@ -29,7 +31,7 @@ export default function SpaceMissionForm() {
 
       <div>
         <label htmlFor="namePlanet">Destination: </label>
-        <select
+        {/* <select
           name="namePlanet"
           id="namePlanet"
           title="namePlanet"
@@ -43,14 +45,28 @@ export default function SpaceMissionForm() {
           <option value="Venus">Venus</option>
           <option value="Jupiter">Jupiter</option>
           <option value="Saturn">Saturn</option>
+
+        </select> */}
+
+        {/* альтернативний варіант запису із винесенням  option в окремий файл - selectOtion */}
+        <select
+          name={namePlanet}
+          onChange={(e) => setNamePlanet(e.target.value)}
+          value={namePlanet}
+          title="namePlanet"
+        >
+          {planetOptions.map((option) => (
+            <option value={option.value}>{option.label}</option>
+          ))}
         </select>
       </div>
 
-      <button type="button" onClick={displayNameEndPlanet}>
+      {/* <button type="button" onClick={displayNameEndPlanet}>
         Registration
-      </button>
+      </button> */}
 
-      <h3>{message}</h3>
+      {/* Альтернативний варіант c використанням функції displayNameEndPlanet і кнопки button */}
+      {/* <h3>{message}</h3> */}
 
       <div>
         {name.trim() ? (
