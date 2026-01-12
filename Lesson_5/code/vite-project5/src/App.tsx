@@ -8,6 +8,7 @@ import IdealWeihtCalculator from "./components/IdealWeihtCalculator/IdealWeihtCa
 import SpaceMissionForm from "./components/SpaceMissionForm/SpaceMissionForm";
 import RandomDog from "./components/RandomDog/RandomDog";
 import GenderReveal from "./components/GenderReveal/GenderReveal";
+import Nationalize from "./components/Nationalize/Nationalize";
 
 function App() {
   const johnDawson = {
@@ -40,6 +41,8 @@ function App() {
       <ProfileCard {...johnDawson} />
 
       <SpaceMissionForm />
+
+      <Nationalize />
     </>
   );
 }
