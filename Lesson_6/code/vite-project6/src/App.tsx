@@ -8,6 +8,9 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import NotFound from "./pages/NotFound/NotFound";
 import Layout from "./layouts/Layout";
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
+import LayoutModal from "./layouts/LayoutModal";
 
 function App() {
   const johnDawson = {
@@ -34,7 +37,13 @@ function App() {
               path="/gender-reveal"
               element={<ProfileCard {...johnDawson} />}
             />
+
+            <Route path="/about-us" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+
+            <Route path="/modal" element={<LayoutModal />} />
           </Route>
+
           {/* path="*" - це wild card - козирь */}
           <Route path="*" element={<NotFound />} />
         </Routes>
