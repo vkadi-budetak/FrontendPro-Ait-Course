@@ -1,5 +1,6 @@
 import { useState } from "react";
-import type { NationalizeResponse } from "../../types/NationalizeResponse";
+import type { NationalizeResponse } from "./types/NationalizeResponse";
+import getCountryNameByCode from "../../utils/getCountryNameByCode";
 
 export default function Nationalize() {
   const [name, setName] = useState("");
@@ -22,7 +23,7 @@ export default function Nationalize() {
         placeholder="Enter Name"
       />
       <button type="button" onClick={fetchNationalize}>
-        Submit
+        Learn nationality
       </button>
 
       {data && (
@@ -35,7 +36,8 @@ export default function Nationalize() {
           <ul>
             {data.country.map((item, index) => (
               <li key={index}>
-                {item.country_id} — {(item.probability * 100).toFixed(1)}%
+                {getCountryNameByCode(item.country_id)} —{" "}
+                {(item.probability * 100).toFixed(1)}%
               </li>
             ))}
           </ul>
