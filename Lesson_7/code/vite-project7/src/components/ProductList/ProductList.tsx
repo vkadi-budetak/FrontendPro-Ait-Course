@@ -13,6 +13,7 @@ export default function ProductList() {
   }
 
   useEffect(() => {
+    // Добавляєм щоб не було помилки цей рядок
     // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchProducts();
   }, []);

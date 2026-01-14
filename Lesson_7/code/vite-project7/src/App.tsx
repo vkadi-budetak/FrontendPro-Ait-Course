@@ -16,6 +16,7 @@ import ProfileData from "./pages/ProfileData/ProfileData";
 import Profile from "./pages/Profile/Profile";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import CarPage from "./pages/CarPage/CarPage";
+import UsersList from "./pages/UsersList/UsersList";
 
 function App() {
   const johnDawson = {
@@ -54,6 +55,9 @@ function App() {
             {/* Добавляяємо сторінку продукту */}
             <Route path="/products/:id" element={<ProductPage />}></Route>
             <Route path="/cars/:model" element={<CarPage />}></Route>
+
+            {/*UserList */}
+            <Route path="/user-list" element={<UsersList />}></Route>
           </Route>
 
           {/* path="*" - це wild card - козирь */}
