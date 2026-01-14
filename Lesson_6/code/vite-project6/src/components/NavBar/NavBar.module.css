@@ -18,3 +18,8 @@
 .link:hover {
     color: tomato;
 }
+
+/* Приминения активной кнопк, на какой я странице и эта кнопка подсвечивается */
+.active {
+    color: darkgoldenrod;
+}

@@ -10,7 +10,11 @@ import NotFound from "./pages/NotFound/NotFound";
 import Layout from "./layouts/Layout";
 import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
-import LayoutModal from "./layouts/LayoutModal";
+import LayoutModal from "./layouts/ProfileLayout";
+import ProfileLayout from "./layouts/ProfileLayout";
+import Settings from "./pages/Settings/Settings";
+import ProfileData from "./pages/ProfileData/ProfileData";
+import Profile from "./pages/Profile/Profile";
 
 function App() {
   const johnDawson = {
@@ -41,7 +45,12 @@ function App() {
             <Route path="/about-us" element={<About />} />
             <Route path="/contact" element={<Contact />} />
 
-            <Route path="/modal" element={<LayoutModal />} />
+            {/* створили додатковий лейаут */}
+            <Route path="/profile" element={<ProfileLayout />}>
+              <Route path="/profile/" element={<Profile />} />
+              <Route path="/profile/data" element={<ProfileData />} />
+              <Route path="/profile/settings" element={<Settings />} />
+            </Route>
           </Route>
 
           {/* path="*" - це wild card - козирь */}
