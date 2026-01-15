@@ -1,26 +1,21 @@
-import { Link } from "react-router-dom";
-import type Users from "../../types/Users";
-import type { FC } from "react";
+import { useParams } from "react-router-dom";
+import s from "./UserPage.module.css";
+import { useUserById } from "./useUserByID";
 
-export const UserPage: FC<Users> = ({
-  id,
-  email,
-  password,
-  name,
-  role,
-  avatar,
-}) => {
+export default function UserPage() {
+  const { id } = useParams();
+
+  //! Кастомний хук - useUserById
+  const { user, message } = useUserById(id);
+  if (message) return <p>{message}</p>;
+
   return (
-    <div>
-      <h2>UserPage</h2>
-      <h3>
-        <Link to={`/user-list/${id}`}>{name}</Link>
-      </h3>
-      <p>{email}</p>
-      <p>{password}</p>
-      <p>{name}</p>
-      <p>{role}</p>
-      <img src={avatar[0]} alt={name} />
-    </div>
+    <section className={s.section}>
+      <div className={s.userCard}>
+        <h2>{user?.name}</h2>
+        <p>{user?.email}</p>
+        <img src={user?.avatar} alt={user?.name} />
+      </div>
+    </section>
   );
-};
+}
